@@ -12,9 +12,9 @@
     "lint": "eslint . --ext .vue,.js,.jsx,.cjs,.mjs,.ts,.tsx,.cts,.mts --fix --ignore-path .gitignore",
     "format": "prettier --write src/",
     "typegen": "pocketbase-typegen --db ./pocketbase/pb_data/data.db --out ./src/pocketbase-types.ts"
-
   },
   "dependencies": {
+    "@vueuse/core": "^11.1.0",
     "pocketbase": "^0.21.5",
     "pocketbase-typegen": "^1.2.1",
     "vue": "^3.4.29",
