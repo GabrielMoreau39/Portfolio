@@ -2,6 +2,9 @@
 import { computed, ref } from 'vue'
 import { RouterLink, useRoute } from 'vue-router'
 import IconLogo from './icons/IconLogo.vue';
+import IconMoon from './icons/IconMoon.vue';
+import IconSun from './icons/IconSun.vue';
+import { useDark, useToggle } from '@vueuse/core'
 
 const route = useRoute()
 const hideOnRoutes = ['']
@@ -13,14 +16,31 @@ const activeMenu = ref(false)
 function closeMenu() {
     activeMenu.value = false
 }
+const isDark = useDark({
+    selector: 'html',
+    attribute: 'class',
+    valueDark: 'dark',
+    valueLight: 'light',
+})   
+const toggleDark = useToggle(isDark)
 </script>
 
 <template>
     <div class="bg-black items-center justify-between flex px-14">
-        <RouterLink to="/">
-            <IconLogo />
-        </RouterLink>
         <div>
+            <RouterLink to="/">
+                <IconLogo />
+            </RouterLink>
+        </div>
+        <div class="flex-row flex justify-between items-center">
+            <div>
+                <button @click="toggleDark()">
+                    <IconSun v-show="!isDark" />
+                    <IconMoon v-show="isDark" />
+                </button>
+
+
+            </div>
             <div>
                 <nav class="invisible opacity-0 flex-1 px-6 py-12 flex justify-between mt-20 flex-col fixed z-10 inset-0 bg-darkRed lg:mt-0 lg:flex-row lg:static lg:bg-transparent lg:py-6 lg:visible lg:opacity-100"
                     :class="{ '!visible !opacity-100': activeMenu }" v-scroll-lock="activeMenu">
@@ -46,7 +66,7 @@ function closeMenu() {
                         </li>
                     </ul>
                 </nav>
-        </div>
+            </div>
         </div>
     </div>
 </template>
