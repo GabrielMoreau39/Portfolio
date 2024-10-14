@@ -64,6 +64,12 @@ const toggleDark = useToggle(isDark)
                                 class="block p-4 rounded-lg text-white" to="/Contact" @click="closeMenu">Contact
                             </RouterLink>
                         </li>
+                        <li>
+                            <RouterLink
+                                :class="{ 'bg-moredarkRed lg:bg-transparent': $route.path === '/projet', 'lg:hover:before:border-b-white lg:hover:border-b-1 lg:hover:border-b lg:hover:rounded-none lg:hover:w-full': true }"
+                                class="block p-4 rounded-lg text-white" to="/projet" @click="closeMenu">listProjets
+                            </RouterLink>
+                        </li>
                     </ul>
                 </nav>
             </div>
