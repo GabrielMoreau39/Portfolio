@@ -6,7 +6,7 @@ import LogInOut from './components/LogInOut.vue';
 <template>
   <header>
     <div class="wrapper">
-      <h1 class="text-2xl bg-slate-400">Template Principal (Menu/Footer...)</h1>
+      <h1 class="text-2xl bg-slate-400">Portfolio</h1>
       <LogInOut />
       <nab>
         <ul>
