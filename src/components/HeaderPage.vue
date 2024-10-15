@@ -30,8 +30,8 @@ const toggleDark = useToggle(isDark)
     <div class="bg-black dark:bg-white items-center justify-between flex px-4 lg:px-14 py-5 lg:py-0">
         <div>
             <RouterLink to="/fr/">
-                <IconLogoBlanc v-show="!isDark"/>
-                <IconLogoNoir v-show="isDark"/>
+                <IconLogoBlanc v-show="!isDark" class="w-16 h-auto lg:w-24"/>
+                <IconLogoNoir v-show="isDark" class="w-16 h-auto lg:w-24"/>
             </RouterLink>
         </div>
         <div class="flex-row flex justify-between items-center my-auto">
@@ -49,7 +49,7 @@ const toggleDark = useToggle(isDark)
                     <span :class="{ '!opacity-0': activeMenu }"></span>
                     <span :class="{ '-translate-y-[7px] -rotate-45 !w-7': activeMenu }"></span>
                 </button>
-                <nav class="invisible opacity-0 flex-1 px-6 py-12 flex justify-between mt-24 flex-col fixed z-10 inset-0 bg-black dark:bg-white lg:mt-0 lg:flex-row lg:static lg:bg-transparent lg:py-6 lg:visible lg:opacity-100"
+                <nav class="invisible opacity-0 flex-1 px-6 py-12 flex justify-between mt-20 flex-col fixed z-10 inset-0 bg-black dark:bg-white lg:mt-0 lg:flex-row lg:static lg:bg-transparent lg:py-6 lg:visible lg:opacity-100"
                     :class="{ '!visible !opacity-100': activeMenu }" v-scroll-lock="activeMenu">
                     <ul class="flex flex-col gap-4 lg:flex-row">
 
