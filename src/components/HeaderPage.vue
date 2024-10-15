@@ -48,26 +48,20 @@ const toggleDark = useToggle(isDark)
 
                         <li>
                             <RouterLink
-                                :class="{ 'bg-moredarkRed lg:bg-transparent': $route.path === '/About', 'lg:hover:before:border-b-white lg:hover:border-b-1 lg:hover:border-b lg:hover:rounded-none lg:hover:w-full': true }"
-                                class="block p-4 rounded-lg text-white" to="/About" @click="closeMenu">A propos
+                                :class="{ 'bg-moredarkRed lg:bg-transparent': $route.path === '/fr/about', 'lg:hover:before:border-b-white lg:hover:border-b-1 lg:hover:border-b lg:hover:rounded-none lg:hover:w-full': true }"
+                                class="block p-4 rounded-lg text-white" to="/fr/about" @click="closeMenu">A propos
                             </RouterLink>
                         </li>
                         <li>
                             <RouterLink
-                                :class="{ 'bg-moredarkRed lg:bg-transparent': $route.path === '/Projets', 'lg:hover:before:border-b-white lg:hover:border-b-1 lg:hover:border-b lg:hover:rounded-none lg:hover:w-full': true }"
-                                class="block p-4 rounded-lg text-white" to="/Projets" @click="closeMenu">Projets
+                                :class="{ 'bg-moredarkRed lg:bg-transparent': $route.path === '/fr/projet', 'lg:hover:before:border-b-white lg:hover:border-b-1 lg:hover:border-b lg:hover:rounded-none lg:hover:w-full': true }"
+                                class="block p-4 rounded-lg text-white" to="/fr/projet" @click="closeMenu">Projets
                             </RouterLink>
                         </li>
                         <li>
                             <RouterLink
-                                :class="{ 'bg-moredarkRed lg:bg-transparent': $route.path === '/Contact', 'lg:hover:before:border-b-white lg:hover:border-b-1 lg:hover:border-b lg:hover:rounded-none lg:hover:w-full': true }"
-                                class="block p-4 rounded-lg text-white" to="/Contact" @click="closeMenu">Contact
-                            </RouterLink>
-                        </li>
-                        <li>
-                            <RouterLink
-                                :class="{ 'bg-moredarkRed lg:bg-transparent': $route.path === '/projet', 'lg:hover:before:border-b-white lg:hover:border-b-1 lg:hover:border-b lg:hover:rounded-none lg:hover:w-full': true }"
-                                class="block p-4 rounded-lg text-white" to="/projet" @click="closeMenu">listProjets
+                                :class="{ 'bg-moredarkRed lg:bg-transparent': $route.path === '/fr/contact', 'lg:hover:before:border-b-white lg:hover:border-b-1 lg:hover:border-b lg:hover:rounded-none lg:hover:w-full': true }"
+                                class="block p-4 rounded-lg text-white" to="/fr/contact" @click="closeMenu">Contact
                             </RouterLink>
                         </li>
                     </ul>
