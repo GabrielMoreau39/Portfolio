@@ -27,14 +27,14 @@ const toggleDark = useToggle(isDark)
 </script>
 
 <template>
-    <div class="bg-black dark:bg-white items-center justify-between flex px-14 py-5 lg:py-0">
+    <div class="bg-black dark:bg-white items-center justify-between flex px-4 lg:px-14 py-5 lg:py-0">
         <div>
             <RouterLink to="/fr/">
                 <IconLogoBlanc v-show="!isDark"/>
                 <IconLogoNoir v-show="isDark"/>
             </RouterLink>
         </div>
-        <div class="flex-row flex justify-between items-center">
+        <div class="flex-row flex justify-between items-center my-auto">
             <div>
                 <button @click="toggleDark()">
                     <IconSun v-show="!isDark" />

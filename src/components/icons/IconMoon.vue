@@ -1,7 +1,7 @@
 <template>
     <div>
-        <svg width="39" height="39" viewBox="0 0 39 39" fill="none" xmlns="http://www.w3.org/2000/svg"
-            class="w-[39px] h-[39px] relative" preserveAspectRatio="xMidYMid meet">
+        <svg width="25" height="25" viewBox="0 0 39 39" fill="none" xmlns="http://www.w3.org/2000/svg"
+            class="w-[25px] h-[25px] relative" preserveAspectRatio="xMidYMid meet">
             <path
                 d="M19.5 4.875C17.5606 6.8144 16.4711 9.44478 16.4711 12.1875C16.4711 14.9302 17.5606 17.5606 19.5 19.5C21.4394 21.4394 24.0698 22.5289 26.8125 22.5289C29.5552 22.5289 32.1856 21.4394 34.125 19.5C34.125 22.3926 33.2673 25.2201 31.6602 27.6252C30.0532 30.0303 27.7691 31.9048 25.0968 33.0117C22.4244 34.1187 19.4838 34.4083 16.6468 33.844C13.8098 33.2797 11.2039 31.8868 9.15857 29.8414C7.11323 27.7961 5.72033 25.1902 5.15602 22.3532C4.59171 19.5162 4.88134 16.5756 5.98827 13.9033C7.0952 11.2309 8.96972 8.94677 11.3748 7.33976C13.7799 5.73274 16.6075 4.875 19.5 4.875Z"
                 stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
