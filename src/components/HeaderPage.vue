@@ -30,8 +30,8 @@ const toggleDark = useToggle(isDark)
     <div class="bg-black dark:bg-white items-center justify-between flex px-4 lg:px-14 py-5 lg:py-0">
         <div>
             <RouterLink to="/fr/">
-                <IconLogoBlanc v-show="!isDark" class="w-16 h-auto lg:w-24"/>
-                <IconLogoNoir v-show="isDark" class="w-16 h-auto lg:w-24"/>
+                <IconLogoBlanc v-show="!isDark" class="w-16 h-auto lg:w-24" />
+                <IconLogoNoir v-show="isDark" class="w-16 h-auto lg:w-24" />
             </RouterLink>
         </div>
         <div class="flex-row flex justify-between items-center my-auto">
@@ -75,7 +75,19 @@ const toggleDark = useToggle(isDark)
                             </RouterLink>
                         </li>
                     </ul>
+                    <div class="flex flex-rox justify-around items-center">
+                        <div class="flex flex-col">
+                            <div class="flex flex-row"></div>
+                            <div class="flex flex-row"></div>
+                        </div>
+                        <div class="flex flex-row lg:hidden text-white">
+                            <RouterLink to="/fr/">
+                                <strong>FR</strong>/EN
+                            </RouterLink>
+                        </div>
+                    </div>
                 </nav>
+                
             </div>
         </div>
     </div>
