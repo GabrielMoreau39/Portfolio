@@ -3,5 +3,7 @@
 </script>
 
 <template>
-    <h1 class="text-2xl bg-slate-400">Portfolio</h1>
+    <div class="bg-black dark:bg-white text-white dark:text-black">
+        <h1 class="text-2xl">Portfolio</h1>
+    </div>
 </template>

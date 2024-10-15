@@ -29,7 +29,7 @@ const toggleDark = useToggle(isDark)
 <template>
     <div class="bg-black dark:bg-white items-center justify-between flex px-14 py-5 lg:py-0">
         <div>
-            <RouterLink to="/">
+            <RouterLink to="/fr/">
                 <IconLogoBlanc v-show="!isDark"/>
                 <IconLogoNoir v-show="isDark"/>
             </RouterLink>
