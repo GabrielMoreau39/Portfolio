@@ -35,7 +35,7 @@
 </script>
 
 <template>
-    <div class="bg-black dark:bg-white items-center justify-between flex lg:px-14 py-5 lg:py-0 px-6">
+    <div class="bg-black dark:bg-white items-center justify-between flex lg:px-14 py-5 lg:py-0 px-6 ">
         <div>
             <RouterLink to="/fr/">
                 <IconLogoBlanc v-show="!isDark" class="w-16 h-auto lg:w-24" />
@@ -57,29 +57,29 @@
                     <span :class="{ '!opacity-0': activeMenu }"></span>
                     <span :class="{ '-translate-y-[7px] -rotate-45 !w-7': activeMenu }"></span>
                 </button>
-                <nav class="invisible opacity-0 flex-1 py-12 flex justify-between mt-20 flex-col fixed z-10 inset-0 bg-black dark:bg-white lg:mt-0 lg:flex-row lg:static lg:bg-transparent lg:py-6 lg:visible lg:opacity-100"
+                <nav class="bg-[url(img/logo.svg)] dark:bg-[url(img/logo_dark.svg)] bg-no-repeat bg-cover invisible opacity-0 flex-1 py-12 flex justify-between mt-20 flex-col fixed z-10 inset-0 bg-black dark:bg-white lg:mt-0 lg:flex-row lg:static lg:bg-transparent lg:py-6 lg:visible lg:opacity-100"
                     :class="{ '!visible !opacity-100': activeMenu }" v-scroll-lock="activeMenu">
                     <ul class="flex flex-col gap-4 lg:flex-row px-6">
 
                         <li>
                             <RouterLink
                                 :class="{ 'bg-moredarkRed lg:bg-transparent': $route.path === '/fr/about', 'lg:hover:before:border-b-white lg:dark:hover:before:border-b-black lg:hover:border-b-1 lg:hover:border-b lg:hover:rounded-none lg:hover:w-full': true }"
-                                class="block p-4 rounded-lg text-white dark:text-black" to="/fr/about"
-                                @click="closeMenu">À propos
+                                class="block p-4 rounded-lg text-white dark:text-black text-2xl font-display"
+                                to="/fr/about" @click="closeMenu">À propos
                             </RouterLink>
                         </li>
                         <li>
                             <RouterLink
                                 :class="{ 'bg-moredarkRed lg:bg-transparent': $route.path === '/fr/projet', 'lg:hover:before:border-b-white lg:dark:hover:before:border-b-black lg:hover:border-b-1 lg:hover:border-b lg:hover:rounded-none lg:hover:w-full': true }"
-                                class="block p-4 rounded-lg text-white dark:text-black" to="/fr/projet"
-                                @click="closeMenu">Projets
+                                class="block p-4 rounded-lg text-white dark:text-black text-2xl font-display"
+                                to="/fr/projet" @click="closeMenu">Projets
                             </RouterLink>
                         </li>
                         <li>
                             <RouterLink
                                 :class="{ 'bg-moredarkRed lg:bg-transparent': $route.path === '/fr/contact', 'lg:hover:before:border-b-white lg:dark:hover:before:border-b-black lg:hover:border-b-1 lg:hover:border-b lg:hover:rounded-none lg:hover:w-full': true }"
-                                class="block p-4 rounded-lg text-white dark:text-black" to="/fr/contact"
-                                @click="closeMenu">Contact
+                                class="block p-4 rounded-lg text-white dark:text-black text-2xl font-display"
+                                to="/fr/contact" @click="closeMenu">Contact
                             </RouterLink>
                         </li>
                     </ul>
