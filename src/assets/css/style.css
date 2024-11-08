@@ -1,3 +1,33 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+    
+    ::before,
+    ::after {
+    box-sizing: border-box;
+    }
+
+    @layer base {
+    
+    p {
+        @apply font-sans text-xs text-white;
+    }
+
+    h1 {
+        @apply font-display text-xl text-white;
+    }
+    h2 {
+        @apply font-display text-base text-white;
+    }
+    h3 {
+        @apply font-display text-sm text-white;
+    }
+
+    body {
+        @apply max-w-full;
+    }
+    .ul {
+        list-style-type: disc;
+        padding-left: 1em;
+    }
+}
