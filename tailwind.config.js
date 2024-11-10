@@ -14,6 +14,7 @@ export default {
       'display': ['Notable', 'sans-serif'],
       'body': ['Nova Mono', 'sans-serif'],
       'mono': ['Lexend Zetta  ', 'sans-serif'],
+      'number':  ['Archivo Black', 'sans-serif'],
       },
       fontSize: {
         'xxs': '0.625rem',
