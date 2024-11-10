@@ -2,6 +2,7 @@
 <script setup lang="ts">
     import IconPlus from '@/components/icons/IconPlus.vue';
     import IconScroll from '@/components/icons/IconScroll.vue';
+    import CardCarrousel from '@/components/CardCarrousel.vue';
 </script>
 
 <template>
@@ -23,6 +24,7 @@
                 <p class="font-mono">PRINCIPAUX</p>
                 <h2 class="text-5xl font-sans">PROJETS</h2>
             </div>
+            <CardCarrousel />
         </section>
     </div>
 </template> 
