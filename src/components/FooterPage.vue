@@ -30,7 +30,7 @@
             </RouterLink>
         </div>
         <div>
-            <a href="/public/img/CV_Gabriel-Moreau.pdf" download="CV_Gabriel-Moreau.pdf"
+            <a href="/public/CV_Gabriel-Moreau.pdf" download="CV_Gabriel-Moreau.pdf"
                 class="dark:border-b-black border-b-white border-b-2 text-white dark:text-black">Télécharger mon
                 CV</a>
         </div>

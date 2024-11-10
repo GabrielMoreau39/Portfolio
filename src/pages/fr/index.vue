@@ -1,7 +1,7 @@
 <!-- eslint-disable vue/multi-word-component-names -->
 <script setup lang="ts">
     import IconPlus from '@/components/icons/IconPlus.vue';
-import IconScroll from '@/components/icons/IconScroll.vue';
+    import IconScroll from '@/components/icons/IconScroll.vue';
 </script>
 
 <template>
@@ -17,6 +17,12 @@ import IconScroll from '@/components/icons/IconScroll.vue';
                 <p class="text-base dark:text-black">En savoir plus</p>
             </div>
             <IconScroll class="disply flex justify-center"/>
+        </section>
+        <section>
+            <div class="text-center border-b border-b-white mx-8 pb-2">
+                <p class="font-mono">PRINCIPAUX</p>
+                <h2 class="text-5xl font-sans">PROJETS</h2>
+            </div>
         </section>
     </div>
 </template> 
