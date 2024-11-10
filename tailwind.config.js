@@ -13,6 +13,7 @@ export default {
       'sans': ['Arial', 'sans-serif'],
       'display': ['Notable', 'sans-serif'],
       'body': ['Nova Mono', 'sans-serif'],
+      'mono': ['Lexend Zetta  ', 'sans-serif'],
       },
       fontSize: {
         'xxs': '0.625rem',
