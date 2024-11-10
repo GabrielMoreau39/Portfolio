@@ -3,7 +3,7 @@
     import { RouterLink } from 'vue-router/auto'
     import type { ProjetsResponse } from '@/pocketbase-types';
     import { defineProps } from 'vue';
-    import ImgPb from './icons/ImgPb.vue';
+    import ImgPb from './ImgPb.vue';
 
     const props = defineProps<ProjetsResponse<any>>()
 </script>
