@@ -12,6 +12,7 @@ export default {
       fontFamily: {
       'sans': ['Arial', 'sans-serif'],
       'display': ['Notable', 'sans-serif'],
+      'body': ['Nova Mono', 'sans-serif'],
       },
       fontSize: {
         'xxs': '0.625rem',
