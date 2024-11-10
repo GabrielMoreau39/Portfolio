@@ -2,7 +2,10 @@
 <script setup lang="ts">
     import IconPlus from '@/components/icons/IconPlus.vue';
     import IconScroll from '@/components/icons/IconScroll.vue';
-    import CardCarrousel from '@/components/CardCarrousel.vue';
+    import { CardProjets } from '@/components/CardProjets.vue';
+    import { pb } from '@/backend';
+    
+    const Projets = await pb.collection('Projets').getFullList()
 </script>
 
 <template>
@@ -24,7 +27,7 @@
                 <p class="font-mono">PRINCIPAUX</p>
                 <h2 class="text-5xl font-sans">PROJETS</h2>
             </div>
-            <CardCarrousel />
+            <CardProjets v-for="unProjet in Projets" v-bind="unProjet" :key="unProjet.id" class="border rounded-2xl shadow-lg"/>
         </section>
     </div>
 </template> 
