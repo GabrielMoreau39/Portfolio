@@ -1,6 +1,7 @@
 <!-- eslint-disable vue/multi-word-component-names -->
 <script setup lang="ts">
     import IconPlus from '@/components/icons/IconPlus.vue';
+import IconScroll from '@/components/icons/IconScroll.vue';
 </script>
 
 <template>
@@ -15,6 +16,7 @@
                 <IconPlus />
                 <p class="text-base dark:text-black">En savoir plus</p>
             </div>
+            <IconScroll class="disply flex justify-center"/>
         </section>
     </div>
 </template> 
