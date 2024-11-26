@@ -32,11 +32,11 @@
                     <h2 class="font-body text-3xl dark:text-black">m o r e a u</h2>
                     <h3 class="font-body text-xl pt-2 dark:text-black">Développeur Web</h3>
                 </div>
-                <div class="display flex flex-row justify-center items-center space-x-2">
+                <div class="display flex flex-row justify-center items-center space-x-2 pt-24">
                     <IconPlus />
                     <p class="text-base dark:text-black">En savoir plus</p>
                 </div>
-                <IconScroll class="disply flex justify-center" />
+                <IconScroll class="display flex justify-center pt-24"/>
             </div>
         </section>
         <section>
