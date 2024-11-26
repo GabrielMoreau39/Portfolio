@@ -25,7 +25,7 @@
         <section class="space-y-28 py-28">
             <div>
                 <div class="grille relative z-10 grid">
-                    <div class="element place-self-center mb-60"></div>
+                    <div class="element place-self-center"></div>
                 </div>
                 <div class="text-center space-y-6">
                     <h2 class="font-body text-3xl dark:text-black">g a b r i e l</h2>
@@ -36,7 +36,7 @@
                     <IconPlus />
                     <p class="text-base dark:text-black">En savoir plus</p>
                 </div>
-                <IconScroll class="display flex justify-center pt-24"/>
+                <IconScroll class="display flex justify-center pt-24 dark:fill-black dark:stroke-white"/>
             </div>
         </section>
         <section>
@@ -114,15 +114,16 @@
     top: 0;
     left: 0;
     width: 100%;
-    height: 100%;
+    height: 80%;
     mask-size: 20px 20px;
-    mask-image: linear-gradient(to right, gray 3px, transparent 3px);
+    mask-image: linear-gradient(to right, gray 3px, transparent 3px),
+                linear-gradient(to bottom, gray 3px, transparent 3px);
     pointer-events: none;
 }
 
 .element {
     width: 50%;
-    height: 20%;
+    height: 30%;
     background-color: gray;
     filter: blur(140px);
     z-index: -1;
