@@ -17,15 +17,24 @@
     import IconVsCode from '@/components/icons/IconVsCode.vue';
     import IconVue from '@/components/icons/IconVue.vue';
     import IconWordpress from '@/components/icons/IconWordpress.vue';
+    import { useDark, useToggle } from '@vueuse/core'
     
+    const isDark = useDark({
+        selector: 'html',
+        attribute: 'class',
+        valueDark: 'dark',
+        valueLight: 'light',
+    })   
+    const toggleDark = useToggle(isDark)
 </script>
 
 <template>
     <div class="bg-black dark:bg-white text-white dark:text-black">
         <section class="space-y-28 py-28">
             <div>
-                <div class="grille relative z-10 grid">
-                    <div class="element place-self-center"></div>
+                <div class="grille relative z-10 grid pt-4">
+                    <div v-show="!isDark" class="element place-self-center"></div>
+                    <div v-show="isDark" class="element2 place-self-center"></div>
                 </div>
                 <div class="text-center space-y-6">
                     <h2 class="font-body text-3xl dark:text-black">g a b r i e l</h2>
@@ -114,19 +123,29 @@
     top: 0;
     left: 0;
     width: 100%;
-    height: 80%;
+    height: 100%;
     mask-size: 20px 20px;
-    mask-image: linear-gradient(to right, gray 3px, transparent 3px),
-                linear-gradient(to bottom, gray 3px, transparent 3px);
+    mask-image: linear-gradient(to right, gray 3px, transparent 1px),
+                linear-gradient(to bottom, gray 3px, transparent 1px);
     pointer-events: none;
 }
 
-.element {
+.element2 {
     width: 50%;
-    height: 30%;
-    background-color: gray;
+    height: 38%;
+    background-color: rgb(207, 207, 207);
     filter: blur(140px);
     z-index: -1;
     pointer-events: auto;
 }
+
+.element {
+    width: 50%;
+    height: 38%;
+    background-color: rgb(107, 107, 107);
+    filter: blur(140px);
+    z-index: -1;
+    pointer-events: auto;
+}
+
 </style>
