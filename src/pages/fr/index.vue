@@ -11,6 +11,7 @@
     import IconPhotoshop from '@/components/icons/IconPhotoshop.vue';
     import IconPlus from '@/components/icons/IconPlus.vue';
     import IconScroll from '@/components/icons/IconScroll.vue';
+    import IconScrollBlanc from '@/components/icons/IconScrollBlanc.vue';
     import IconTailwind from '@/components/icons/IconTailwind.vue';
     import IconTrello from '@/components/icons/IconTrello.vue';
     import IconTypescript from '@/components/icons/IconTypescript.vue';
@@ -42,10 +43,11 @@
                     <h3 class="font-body text-xl pt-2 dark:text-black">Développeur Web</h3>
                 </div>
                 <div class="display flex flex-row justify-center items-center space-x-2 pt-24">
-                    <IconPlus />
+                    <IconPlus class="relative z-30" />
                     <p class="text-base dark:text-black">En savoir plus</p>
                 </div>
-                <IconScroll class="display flex justify-center pt-24 dark:fill-black dark:stroke-white"/>
+                <IconScroll v-show="!isDark" class="display flex justify-center pt-24 relative z-30"/>
+                <IconScrollBlanc v-show="isDark" class="display flex justify-center pt-24 relative z-30"/>
             </div>
         </section>
         <section>

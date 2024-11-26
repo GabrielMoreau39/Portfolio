@@ -35,7 +35,7 @@
 </script>
 
 <template class="relative z-30">
-    <div class="bg-black dark:bg-white items-center justify-between flex lg:px-14 py-5 lg:py-0 px-6 relative z-30">
+    <div class="bg-black dark:bg-white items-center justify-between flex lg:px-14 py-5 lg:py-0 px-6 relative z-40">
         <div>
             <RouterLink to="/fr/">
                 <IconLogoBlanc v-show="!isDark" class="w-16 h-auto lg:w-24" />
