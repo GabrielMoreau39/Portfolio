@@ -25,7 +25,7 @@
         <section class="space-y-28 py-28">
             <div>
                 <div class="grille relative z-10 grid">
-                    <div class="element place-self-center mb-36"></div>
+                    <div class="element place-self-center mb-60"></div>
                 </div>
                 <div class="text-center space-y-6">
                     <h2 class="font-body text-3xl dark:text-black">g a b r i e l</h2>
@@ -115,16 +115,16 @@
     left: 0;
     width: 100%;
     height: 100%;
-    mask-size: 40px 40px;
-    mask-image: linear-gradient(to right, gray 1px, transparent 1px);
+    mask-size: 20px 20px;
+    mask-image: linear-gradient(to right, gray 3px, transparent 3px);
     pointer-events: none;
 }
 
 .element {
-    width: 60%;
-    height: 30%;
-    background-color: white;
-    filter: blur(150px);
+    width: 50%;
+    height: 20%;
+    background-color: gray;
+    filter: blur(140px);
     z-index: -1;
     pointer-events: auto;
 }
