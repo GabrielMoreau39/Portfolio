@@ -4,6 +4,7 @@
     import IconCss from '@/components/icons/IconCss.vue';
     import IconFigma from '@/components/icons/IconFigma.vue';
     import IconGitHub from '@/components/icons/IconGitHub.vue';
+    import IconGithubNoir from '@/components/icons/IconGithubNoir.vue';
     import IconGoogleDrive from '@/components/icons/IconGoogleDrive.vue';
     import IconHtml from '@/components/icons/IconHtml.vue';
     import IconIllustrator from '@/components/icons/IconIllustrator.vue';
@@ -50,24 +51,24 @@
             </div>
         </section>
         <section>
-            <div class="text-center border-b border-b-white mx-8 pb-2">
-                <p class="font-mono">PRINCIPAUX</p>
-                <h2 class="text-5xl font-sans">PROJETS</h2>
+            <div class="text-center border-b border-b-white dark:border-b-black mx-8 pb-2">
+                <p class="font-mono dark:text-black">PRINCIPAUX</p>
+                <h2 class="text-5xl font-sans dark:text-black">PROJETS</h2>
             </div>
             <div>
                 <CardProjets />
             </div>
         </section>
         <section>
-            <div class="text-center border-b border-b-white mx-8 pb-2">
-                <p class="font-mono">MES</p>
-                <h2 class="text-4xl font-sans">COMPÉTENCES</h2>
+            <div class="text-center border-b border-b-white dark:border-b-black mx-8 pb-2">
+                <p class="font-mono dark:text-black">MES</p>
+                <h2 class="text-4xl font-sans dark:text-black">COMPÉTENCES</h2>
             </div>
             <div class="px-8 py-6 grid grid-cols-2 grid-rows-2 gap-4">
                 <div class="col-span-1 row-span-2 bg-gray-100 p-4">
                     <div class="flex justify-start">
-                        <h2 class="font-number">01</h2>
-                        <h2 class="font-number ml-2">Dev</h2>
+                        <h2 class="font-number dark:text-black">01</h2>
+                        <h2 class="font-number ml-2 dark:text-black">Dev</h2>
                     </div>
                     <div class="grid grid-cols-2 gap-y-10 pt-4 mt-4">
                         <IconVue />
@@ -78,14 +79,17 @@
                         <IconHtml />
                         <IconTypescript />
                         <IconVsCode />
-                        <IconGitHub />
+                        <div>
+                            <IconGitHub v-show="!isDark"/>
+                            <IconGithubNoir v-show="isDark"/>
+                        </div>
                         <IconWordpress />
                     </div>
                 </div>
                 <div class="col-span-1 row-span-1 bg-gray-100 p-4">
                     <div class="flex justify-start">
-                        <h2 class="font-number">02</h2>
-                        <h2 class="font-number ml-2">Design</h2>
+                        <h2 class="font-number dark:text-black">02</h2>
+                        <h2 class="font-number ml-2 dark:text-black">Design</h2>
                     </div>
                     <div class="grid grid-cols-2 gap-y-10 pt-4 mt-4">
                         <IconFigma />
@@ -95,8 +99,8 @@
                 </div>
                 <div class="col-span-1 row-span-1 bg-gray-100 p-4">
                     <div class="flex justify-start">
-                        <h2 class="font-number">03</h2>
-                        <h2 class="font-number ml-2">Gestion</h2>
+                        <h2 class="font-number dark:text-black">03</h2>
+                        <h2 class="font-number ml-2 dark:text-black">Gestion</h2>
                     </div>
                     <div class="grid grid-cols-2 pt-4 mt-4">
                         <IconTrello />
@@ -105,13 +109,13 @@
                 </div>
             </div>
         </section>
-        <section class="bg-white py-7">
+        <section class="bg-white dark:bg-black py-7">
             <div class="px-5 space-y-2">
-                <h2 class="text-black font-sans font-bold ">Contactez-moi</h2>
+                <h2 class="text-black dark:text-white font-sans font-bold ">Contactez-moi</h2>
                 <div>
-                    <p class="text-black w-1/2%">Si vous avez besoin de me poser des</p>
-                    <p class="text-black w-1/2%">questions ou avoir plus d'informations,</p>
-                    <p class="text-black w-1/2%">remplissez ce formulaire.</p>
+                    <p class="text-black dark:text-white w-1/2%">Si vous avez besoin de me poser des</p>
+                    <p class="text-black dark:text-white w-1/2%">questions ou avoir plus d'informations,</p>
+                    <p class="text-black dark:text-white w-1/2%">remplissez ce formulaire.</p>
                 </div>
             </div>
         </section>
