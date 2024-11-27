@@ -29,9 +29,9 @@ const isDark = useDark({
         <img v-show="isDark" src="/public/img/logo-MMI-blanc.png" alt="logo MMI" class="size-1/4">
         <div>
           <h2 class="font-sans font-bold text-black dark:text-white">BUT MMI Montbéliard</h2>
-          <h3 class="text-black font-sans">2023 - 2026</h3>
+          <h3 class="text-black dark:text-white font-sans">2023 - 2026</h3>
         </div>
-        <p class="text-black">Le BUT Métiers du Multimédia et de l'Internet, forme à tous les métiers du Web. Depuis
+        <p class="text-black dark:text-white">Le BUT Métiers du Multimédia et de l'Internet, forme à tous les métiers du Web. Depuis
           1997, la formation
           multimédia dispensée à Montbéliard est certainement, en France, la plus orientée projets. Des projets de
           création de sites, d’intégration multimédia, de vidéos et de communication… viennent valider les acquis au
@@ -39,26 +39,29 @@ const isDark = useDark({
           d’études en 3e année. (Source : formation.univ-fcomte.fr)
         </p>
         <a href="https://www.iut-nfc.univ-fcomte.fr/b-u-t-metiers-du-multimedia-et-de-linter">
-          <button class="bg-gray py-2 px-4 rounded-md mt-3">
-            <p>Découvrir la formation</p>
+          <button class="bg-gray dark:bg-white py-2 px-4 rounded-md mt-3">
+            <p class="dark:text-black">Découvrir la formation</p>
           </button>
         </a>
       </div>
       <div class="bg-[#EDEDED] dark:bg-gray m-3 p-4 rounded-lg space-y-4">
-        <img src="/public/img/logo-lycee.png" alt="logo MMI" class="size-1/4">
+        <img src="/public/img/logo-lycee.png" alt="logo MMI" class="size-1/4 dark:bg-white dark:rounded-md">
         <div>
           <h2 class="font-sans font-bold text-black dark:text-white">Lycée Victor-Bérard</h2>
-          <h3 class="text-black font-sans">2020 - 2023</h3>
+          <h3 class="text-black dark:text-white font-sans">2020 - 2023</h3>
         </div>
-        <p class="text-black">Obtention d'un Baccalauréat Général spécialités Mathématiques et Physique Chimie et
+        <p class="text-black dark:text-white">Obtention d'un Baccalauréat Général spécialités Mathématiques et Physique Chimie et
           Sciences de l’ingénieur, avec options Maths Expertes et Arts Plastiques, avec mention assez bien.
         </p>
         <a href="http://www.lyceemorez.fr/">
-          <button class="bg-gray py-2 px-4 rounded-md mt-3">
-            <p>Découvrir la formation</p>
+          <button class="bg-gray dark:bg-white py-2 px-4 rounded-md mt-3">
+            <p class="dark:text-black">Découvrir la formation</p>
           </button>
         </a>
       </div>
+    </section>
+    <section>
+      
     </section>
   </div>
 </template>
