@@ -31,7 +31,8 @@ const isDark = useDark({
           <h2 class="font-sans font-bold text-black dark:text-white">BUT MMI Montbéliard</h2>
           <h3 class="text-black dark:text-white font-sans">2023 - 2026</h3>
         </div>
-        <p class="text-black dark:text-white">Le BUT Métiers du Multimédia et de l'Internet, forme à tous les métiers du Web. Depuis
+        <p class="text-black dark:text-white">Le BUT Métiers du Multimédia et de l'Internet, forme à tous les métiers du
+          Web. Depuis
           1997, la formation
           multimédia dispensée à Montbéliard est certainement, en France, la plus orientée projets. Des projets de
           création de sites, d’intégration multimédia, de vidéos et de communication… viennent valider les acquis au
@@ -50,7 +51,8 @@ const isDark = useDark({
           <h2 class="font-sans font-bold text-black dark:text-white">Lycée Victor-Bérard</h2>
           <h3 class="text-black dark:text-white font-sans">2020 - 2023</h3>
         </div>
-        <p class="text-black dark:text-white">Obtention d'un Baccalauréat Général spécialités Mathématiques et Physique Chimie et
+        <p class="text-black dark:text-white">Obtention d'un Baccalauréat Général spécialités Mathématiques et Physique
+          Chimie et
           Sciences de l’ingénieur, avec options Maths Expertes et Arts Plastiques, avec mention assez bien.
         </p>
         <a href="http://www.lyceemorez.fr/">
@@ -60,8 +62,14 @@ const isDark = useDark({
         </a>
       </div>
     </section>
-    <section>
-      
+    <section class="px-7 py-10 space-y-8">
+      <div>
+        <h2 class="dark:text-black">Si vous souhaitez en</h2>
+        <h2 class="dark:text-black">savoir plus sur moi</h2>
+      </div>
+      <button class="text-white dark:text-black border rounded-sm py-2 px-4 display flex justify-center mx-auto">
+        Contactez moi !
+      </button>
     </section>
   </div>
 </template>
