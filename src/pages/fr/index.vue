@@ -18,7 +18,7 @@
     import IconVsCode from '@/components/icons/IconVsCode.vue';
     import IconVue from '@/components/icons/IconVue.vue';
     import IconWordpress from '@/components/icons/IconWordpress.vue';
-    import { useDark, useToggle } from '@vueuse/core'
+    import { useDark } from '@vueuse/core'
     
     const isDark = useDark({
         selector: 'html',
@@ -26,7 +26,6 @@
         valueDark: 'dark',
         valueLight: 'light',
     })   
-    const toggleDark = useToggle(isDark)
 </script>
 
 <template>
