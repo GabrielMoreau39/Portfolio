@@ -20,6 +20,7 @@
     import IconVue from '@/components/icons/IconVue.vue';
     import IconWordpress from '@/components/icons/IconWordpress.vue';
     import { useDark } from '@vueuse/core'
+    import { ref } from 'vue';
     
     const isDark = useDark({
         selector: 'html',
@@ -27,6 +28,33 @@
         valueDark: 'dark',
         valueLight: 'light',
     })   
+
+    const WEB3FORMS_ACCESS_KEY = "24847f4a-81d2-4b85-9167-fcb963166166";
+
+    const name = ref("");
+    const email = ref("");
+    const message = ref("");
+    const phone = ref("");  
+    
+    async function submitForm() {
+        const response = await fetch("https://api.web3forms.com/submit", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json",
+                Accept: "application/json",
+            },
+            body: JSON.stringify({
+                access_key: WEB3FORMS_ACCESS_KEY,
+                name: name.value,
+                email: email.value,
+                message: message.value,
+            }),
+        });
+        const result = await response.json();
+        if (result.success) {
+            console.log(result);
+        }
+    }
 </script>
 
 <template>
@@ -46,8 +74,8 @@
                     <IconPlus class="relative z-30" />
                     <p class="text-base dark:text-black">En savoir plus</p>
                 </div>
-                <IconScroll v-show="!isDark" class="display flex justify-center pt-24 relative z-30"/>
-                <IconScrollBlanc v-show="isDark" class="display flex justify-center pt-24 relative z-30"/>
+                <IconScroll v-show="!isDark" class="display flex justify-center pt-24 relative z-30" />
+                <IconScrollBlanc v-show="isDark" class="display flex justify-center pt-24 relative z-30" />
             </div>
         </section>
         <section>
@@ -80,8 +108,8 @@
                         <IconTypescript />
                         <IconVsCode />
                         <div>
-                            <IconGitHub v-show="!isDark"/>
-                            <IconGithubNoir v-show="isDark"/>
+                            <IconGitHub v-show="!isDark" />
+                            <IconGithubNoir v-show="isDark" />
                         </div>
                         <IconWordpress />
                     </div>
@@ -117,6 +145,36 @@
                     <p class="text-black dark:text-white w-1/2%">questions ou avoir plus d'informations,</p>
                     <p class="text-black dark:text-white w-1/2%">remplissez ce formulaire.</p>
                 </div>
+                <form @submit.prevent="submitForm" class="grid grid-cols-2 gap-6 py-6 ">
+                    <div class="space-y-6">
+                        <div>
+                            <label for="name" class="block text-sm font-medium text-black dark:text-white"></label>
+                            <input type="text" id="name" name="name" v-model="name" placeholder="Nom"
+                                class="w-full h-12 bg-white dark:bg-black text-black dark:text-white border border-black dark:border-white shadow-sm p-2" />
+                        </div>
+                        <div>
+                            <label for="email"
+                                class="block text-sm font-medium text-black dark:text-white"></label>
+                            <input type="email" id="email" name="email" v-model="email" placeholder="Email"
+                                class="w-full h-12 bg-white dark:bg-black text-black dark:text-white border border-black dark:border-white shadow-sm p-2" />
+                        </div>
+                        <div>
+                            <label for="phone" class="block text-sm font-medium text-black dark:text-white"></label>
+                            <input type="tel" id="phone" name="phone" v-model="phone" placeholder="Numéro de téléphone"
+                                class="w-full h-12 bg-white dark:bg-black text-black dark:text-white border border-black dark:border-white shadow-sm p-2" />
+                        </div>
+                    </div>
+                    <div>
+                        <label for="message"
+                            class="block text-sm font-medium text-black dark:text-white"></label>
+                        <textarea id="message" name="message" v-model="message" placeholder="Message" rows="8"
+                            class="w-full bg-white dark:bg-black text-black dark:text-white border border-black dark:border-white shadow-sm pl-2 mb-2"></textarea>
+                    </div>
+                    <div class="col-span-2 flex justify-end items-center">
+                        <button type="submit" class="text-black dark:text-white text-lg font-bold">Envoyer</button>
+                        <IconFleche />
+                    </div>
+                </form>
             </div>
         </section>
     </div>
@@ -138,7 +196,7 @@
 .element2 {
     width: 50%;
     height: 38%;
-    background-color: rgb(207, 207, 207);
+    background-color: rgb(215, 215, 215);
     filter: blur(140px);
     z-index: -1;
     pointer-events: auto;
