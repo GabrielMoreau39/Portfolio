@@ -19,8 +19,11 @@
     import IconVsCode from '@/components/icons/IconVsCode.vue';
     import IconVue from '@/components/icons/IconVue.vue';
     import IconWordpress from '@/components/icons/IconWordpress.vue';
+    import IconFleche from '@/components/icons/IconFleche.vue';
     import { useDark } from '@vueuse/core'
     import { ref } from 'vue';
+    import IconFLecheNoire from '@/components/icons/IconFLecheNoire.vue';
+    import CardProjets from '@/components/CardProjets.vue';
     
     const isDark = useDark({
         selector: 'html',
@@ -55,6 +58,23 @@
             console.log(result);
         }
     }
+
+    import { onMounted } from 'vue';
+    import { pb } from '@/backend';
+    import type { ProjetsResponse } from '@/pocketbase-types';
+    
+    const projets = ref<ProjetsResponse[]>([]);
+    
+    onMounted(async () => {
+        try {
+            const records = await pb.collection('projets').getFullList<ProjetsResponse>({
+                sort: '-created',
+            });
+            projets.value = records;
+        } catch (error) {
+            console.error('Erreur lors de la récupération des projets :', error);
+        }
+    });
 </script>
 
 <template>
@@ -172,7 +192,8 @@
                     </div>
                     <div class="col-span-2 flex justify-end items-center">
                         <button type="submit" class="text-black dark:text-white text-lg font-bold">Envoyer</button>
-                        <IconFleche />
+                        <IconFleche v-show="isDark"/>
+                        <IconFLecheNoire v-show="!isDark"/>
                     </div>
                 </form>
             </div>
