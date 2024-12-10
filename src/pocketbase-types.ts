@@ -35,6 +35,12 @@ export type AuthSystemFields<T = never> = {
 // Record types for each collection
 
 export type ProjetsRecord = {
+	Lien1?: string
+	Lien2?: string
+	Lien3?: string
+	NomLien1?: string
+	NomLien2?: string
+	NomLien3?: string
 	competence1?: string
 	competence2?: string
 	competence3?: string
@@ -48,6 +54,9 @@ export type ProjetsRecord = {
 	logiciel4?: string
 	logiciel5?: string
 	nom?: string
+	text1?: string
+	text2?: string
+	text3?: string
 }
 
 export type UsersRecord = {
