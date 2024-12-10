@@ -7,7 +7,8 @@ export default {
        "colors": {
        "white": "#ffffff",
        "black": "#000000",
-       "gray": "#1a1a1a"
+       "gray": "#1a1a1a",
+       "gray-low": "#525252"
       },
       fontFamily: {
       'sans': ['Arial', 'sans-serif'],
