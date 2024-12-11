@@ -83,7 +83,7 @@
                             </RouterLink>
                         </li>
                     </ul>
-                    <div class="flex flex-row justify-center items-center space-x-48">
+                    <div class="flex flex-row justify-center items-center space-x-48 lg:hidden">
                         <div class="flex flex-col">
                             <div class="flex grid-cols-2 grid-rows-2 space-x-2">
                                 <div v-show="!isDark" class="space-y-2">

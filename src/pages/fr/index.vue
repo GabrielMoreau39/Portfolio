@@ -98,7 +98,7 @@
                     <p class="text-base lg:text-xl dark:text-black z-20 relative">En savoir plus</p>
                 </div>
                 <div class="lg:grid lg:justify-end lg:mr-20 lg:mt-16">
-                    <p class="text-xl hidden lg:flex lg:display lg:rotate-90 lg:items-center lg:justify-center">Scroll Down</p>
+                    <p class="text-xl hidden lg:flex lg:display lg:rotate-90 lg:items-center lg:justify-center dark:text-black">Scroll Down</p>
                     <div>
                         <IconScroll v-show="!isDark" class="display flex justify-center pt-24 lg:pt-16 relative z-30" />
                         <IconScrollBlanc v-show="isDark" class="display flex justify-center pt-24 lg:pt-16 relative z-30" />
