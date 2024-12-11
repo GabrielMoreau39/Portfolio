@@ -21,10 +21,10 @@
     import IconWordpress from '@/components/icons/IconWordpress.vue';
     import IconFleche from '@/components/icons/IconFleche.vue';
     import { useDark } from '@vueuse/core'
-    import { ref } from 'vue';
+    import { ref, onMounted } from 'vue';
     import IconFLecheNoire from '@/components/icons/IconFLecheNoire.vue';
-    import CardProjets from '@/components/CardProjets.vue';
-    
+    // import CardCarrousel from '@/components/CardCarrousel.vue';
+
     const isDark = useDark({
         selector: 'html',
         attribute: 'class',
@@ -59,9 +59,9 @@
         }
     }
 
-    import { onMounted } from 'vue';
     import { pb } from '@/backend';
     import type { ProjetsResponse } from '@/pocketbase-types';
+    import CardProjets from '@/components/CardProjets.vue';
     
     const projets = ref<ProjetsResponse[]>([]);
     
@@ -85,17 +85,25 @@
                     <div v-show="!isDark" class="element place-self-center"></div>
                     <div v-show="isDark" class="element2 place-self-center"></div>
                 </div>
-                <div class="text-center space-y-6">
-                    <h2 class="font-body text-3xl dark:text-black">g a b r i e l</h2>
-                    <h2 class="font-body text-3xl dark:text-black">m o r e a u</h2>
-                    <h3 class="font-body text-xl pt-2 dark:text-black">Développeur Web</h3>
+                <div class="text-center">
+                    <div
+                        class="flex flex-col lg:flex-row items-center justify-center lg:space-x-10 space-y-6 lg:space-y-0">
+                        <h2 class="font-body text-3xl dark:text-black z-20 relative lg:text-5xl">g a b r i e l</h2>
+                        <h2 class="font-body text-3xl dark:text-black z-20 relative lg:text-5xl">m o r e a u</h2>
+                    </div>
+                    <h3 class="font-body text-xl pt-2 lg:pt-8 dark:text-black z-20 relative lg:text-3xl">Développeur Web</h3>
                 </div>
-                <div class="display flex flex-row justify-center items-center space-x-2 pt-24">
+                <div class="display flex flex-row justify-center items-center space-x-2 lg:space-x-4 pt-24">
                     <IconPlus class="relative z-30" />
-                    <p class="text-base dark:text-black">En savoir plus</p>
+                    <p class="text-base lg:text-xl dark:text-black z-20 relative">En savoir plus</p>
                 </div>
-                <IconScroll v-show="!isDark" class="display flex justify-center pt-24 relative z-30" />
-                <IconScrollBlanc v-show="isDark" class="display flex justify-center pt-24 relative z-30" />
+                <div class="lg:grid lg:justify-end lg:mr-20 lg:mt-16">
+                    <p class="text-xl hidden lg:flex lg:display lg:rotate-90 lg:items-center lg:justify-center">Scroll Down</p>
+                    <div>
+                        <IconScroll v-show="!isDark" class="display flex justify-center pt-24 lg:pt-16 relative z-30" />
+                        <IconScrollBlanc v-show="isDark" class="display flex justify-center pt-24 lg:pt-16 relative z-30" />
+                    </div>
+                </div>
             </div>
         </section>
         <section>
@@ -103,9 +111,9 @@
                 <p class="font-mono dark:text-black">PRINCIPAUX</p>
                 <h2 class="text-5xl font-sans dark:text-black">PROJETS</h2>
             </div>
-            <div>
+            <section>
                 <CardProjets />
-            </div>
+            </section>
         </section>
         <section>
             <div class="text-center border-b border-b-white dark:border-b-black mx-8 pb-2">
@@ -173,8 +181,7 @@
                                 class="w-full h-12 bg-white dark:bg-black text-black dark:text-white border border-black dark:border-white shadow-sm p-2" />
                         </div>
                         <div>
-                            <label for="email"
-                                class="block text-sm font-medium text-black dark:text-white"></label>
+                            <label for="email" class="block text-sm font-medium text-black dark:text-white"></label>
                             <input type="email" id="email" name="email" v-model="email" placeholder="Email"
                                 class="w-full h-12 bg-white dark:bg-black text-black dark:text-white border border-black dark:border-white shadow-sm p-2" />
                         </div>
@@ -185,15 +192,14 @@
                         </div>
                     </div>
                     <div>
-                        <label for="message"
-                            class="block text-sm font-medium text-black dark:text-white"></label>
+                        <label for="message" class="block text-sm font-medium text-black dark:text-white"></label>
                         <textarea id="message" name="message" v-model="message" placeholder="Message" rows="8"
                             class="w-full bg-white dark:bg-black text-black dark:text-white border border-black dark:border-white shadow-sm pl-2 mb-2"></textarea>
                     </div>
                     <div class="col-span-2 flex justify-end items-center">
                         <button type="submit" class="text-black dark:text-white text-lg font-bold">Envoyer</button>
-                        <IconFleche v-show="isDark"/>
-                        <IconFLecheNoire v-show="!isDark"/>
+                        <IconFleche v-show="isDark" />
+                        <IconFLecheNoire v-show="!isDark" />
                     </div>
                 </form>
             </div>
