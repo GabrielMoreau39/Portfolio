@@ -1,6 +1,7 @@
 <!-- eslint-disable vue/multi-word-component-names -->
 <script setup lang="ts">
 import { useDark } from '@vueuse/core'
+import { RouterLink } from 'vue-router/auto'
 
 const isDark = useDark({
   selector: 'html',
@@ -67,9 +68,13 @@ const isDark = useDark({
         <h2 class="dark:text-black">Si vous souhaitez en</h2>
         <h2 class="dark:text-black">savoir plus sur moi</h2>
       </div>
-      <button class="text-white dark:text-black border rounded-sm py-2 px-4 display flex justify-center mx-auto">
-        Contactez moi !
-      </button>
+      <div>
+        <RouterLink to="/fr/contact" class="">
+          <button class="text-white dark:text-black border rounded-sm py-2 px-4 display flex justify-center mx-auto">
+            Contactez moi !
+          </button>
+        </RouterLink>
+      </div>
     </section>
   </div>
 </template>
