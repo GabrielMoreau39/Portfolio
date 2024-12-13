@@ -4,34 +4,69 @@
     import IconGithubContact from '@/components/icons/IconGithubContact.vue';
     import IconLinkedInContact from '@/components/icons/IconLinkedInContact.vue';
     import IconBehanceContact from '@/components/icons/IconBehanceContact.vue';
+    import IconGithubContactNoire from '@/components/icons/IconGithubContactNoire.vue';
 
     const WEB3FORMS_ACCESS_KEY = "24847f4a-81d2-4b85-9167-fcb963166166";
 
     import { ref } from 'vue';
+    import { pb } from '@/backend'
     import IconFleche from '@/components/icons/IconFleche.vue';
+    import IconFLecheNoire from '@/components/icons/IconFLecheNoire.vue';
+    import { useDark } from '@vueuse/core'
+    import IconMailContactNoire from '@/components/icons/IconMailContactNoire.vue';
+    import IconLinkedInContactNoire from '@/components/icons/IconLinkedInContactNoire.vue';
+    import IconBehanceContactNoire from '@/components/icons/IconBehanceContactNoire.vue';
 
-    const name = ref("");
-    const email = ref("");
-    const message = ref("");
+    const isDark = useDark({
+        selector: 'html',
+        attribute: 'class',
+        valueDark: 'dark',
+        valueLight: 'light',
+    })  
+
+    const name = ref('');
+    const email = ref('');
+    const message = ref('');
 
     async function submitForm() {
-        const response = await fetch("https://api.web3forms.com/submit", {
-            method: "POST",
-            headers: {
-                "Content-Type": "application/json",
-                Accept: "application/json",
-            },
-            body: JSON.stringify({
-                access_key: WEB3FORMS_ACCESS_KEY,
+        try {
+            // Pour mettre dans Pocketbase
+            const response = await pb.collection('contacts').create({
                 name: name.value,
                 email: email.value,
                 message: message.value,
-            }),
-        });
-        const result = await response.json();
-        if (result.success) {
-            console.log(result);
-            
+            })
+            console.log('Form submitted:', response)
+
+            // Pour recevoir sur mon mail
+            const emailResponse = await fetch("https://api.web3forms.com/submit", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json",
+                    Accept: "application/json",
+                },
+                body: JSON.stringify({
+                    access_key: WEB3FORMS_ACCESS_KEY,
+                    name: name.value,
+                    email: email.value,
+                    message: message.value,
+                }),
+            })
+
+            const emailResult = await emailResponse.json()
+            if (emailResult.success) {
+                console.log('Email sent:', emailResult)
+            } else {
+                console.error('Erreur lors de l\'envoi de l\'email:', emailResult)
+            }
+
+            // Pour réinitialiser les réponses
+            name.value = ''
+            email.value = ''
+            message.value = ''
+            alert('Votre réponse a bien été envoyée')
+        } catch (error) {
+            console.error('Erreur lors de l\'envoi du formulaire:', error)
         }
     }
 </script>
@@ -42,26 +77,38 @@
             <h2 class="text-white dark:text-black">Où me trouver ?</h2>
             <div class="space-y-10 my-10">
                 <div class="display flex flex-row items-center space-x-4">
-                    <IconMailContact />
+                    <div class="flex">
+                        <IconMailContact v-show="!isDark"/>
+                        <IconMailContactNoire v-show="isDark"/>
+                    </div>
                     <p class="text-white dark:text-black underline text-sm">
                         gabrielmoreau@orange.fr
                     </p>
                 </div>
                 <div class="display flex flex-row items-center space-x-4">
-                    <IconGithubContact />
+                    <div class="flex">
+                        <IconGithubContact v-show="!isDark"/>
+                        <IconGithubContactNoire v-show="isDark"/>
+                    </div>
                     <a href="https://github.com/GabrielMoreau39" class="text-white dark:text-black underline text-sm">
                         GabrielMoreau39
                     </a>
                 </div>
                 <div class="display flex flex-row items-center space-x-4">
-                    <IconLinkedInContact />
+                    <div class="flex">
+                        <IconLinkedInContact v-show="!isDark"/>
+                        <IconLinkedInContactNoire v-show="isDark"/>
+                    </div>
                     <a href="https://www.linkedin.com/in/gabriel-moreau-71b29829b/"
                         class="text-white dark:text-black underline text-sm">
                         Gabriel Moreau
                     </a>
                 </div>
                 <div class="display flex flex-row items-center space-x-4">
-                    <IconBehanceContact />
+                    <div class="flex">
+                        <IconBehanceContact v-show="!isDark"/>
+                        <IconBehanceContactNoire v-show="isDark"/>
+                    </div>
                     <a href="https://www.behance.net/gabrielmoreau2"
                         class="text-white dark:text-black underline text-sm">
                         Gabriel Moreau
@@ -74,25 +121,29 @@
             <form @submit.prevent="submitForm" class="space-y-6 py-6">
                 <div>
                     <label for="name" class="block text-sm font-medium text-white dark:text-black">Nom</label>
-                    <input type="text" id="name" name="name" v-model="name"
-                        class="mt-1 w-full bg-black dark:bg-white text-white dark:text-black border border-[#E7E7E7] shadow-sm" />
+                    <input type="text" id="name" name="name" v-model="name" placeholder="Moreau"
+                        class="mt-1 w-full h-12 pl-2 bg-black dark:bg-white text-white dark:text-black border border-[#E7E7E7] shadow-sm" />
                 </div>
                 <div>
                     <label for="email" class="block text-sm font-medium text-white dark:text-black">Email</label>
-                    <input type="email" id="email" name="email" v-model="email"
-                        class="mt-1 w-full bg-black dark:bg-white text-white dark:text-black border border-[#E7E7E7] shadow-sm" />
+                    <input type="email" id="email" name="email" v-model="email" placeholder="Gabriel"
+                        class="mt-1 w-full h-12 pl-2 bg-black dark:bg-white text-white dark:text-black border border-[#E7E7E7] shadow-sm" />
                 </div>
                 <div>
                     <label for="message" class="block text-sm font-medium text-white dark:text-black">Message</label>
                     <textarea id="message" name="message" v-model="message" rows="5"
-                        class="mt-1 w-full bg-black dark:bg-white text-white dark:text-black border border-[#E7E7E7] shadow-sm"></textarea>
+                        placeholder="Tappez votre message ici"
+                        class="mt-1 w-full pt-2 pl-2 bg-black dark:bg-white text-white dark:text-black border border-[#E7E7E7] shadow-sm"></textarea>
                 </div>
                 <div class="flex justify-end items-center">
-                    <button type="submit" class="text-white text-lg font-bold">Envoyer
+                    <button type="submit"
+                        class="text-white dark:text-black text-lg font-bold flex justify-end items-center">Envoyer
+                        <IconFleche v-show="!isDark"/>
+                        <IconFLecheNoire v-show="isDark"/>
                     </button>
-                    <IconFleche />
                 </div>
             </form>
         </section>
     </div>
 </template>
+
