@@ -79,7 +79,7 @@
 
 <template>
     <div class="bg-black dark:bg-white text-white dark:text-black">
-        <section class="space-y-28 py-28">
+        <section class="space-y-28 py-28 lg:pb-24">
             <div>
                 <div class="grille relative z-10 grid pt-4">
                     <div v-show="!isDark" class="element place-self-center"></div>
@@ -91,40 +91,46 @@
                         <h2 class="font-body text-3xl dark:text-black z-20 relative lg:text-5xl">g a b r i e l</h2>
                         <h2 class="font-body text-3xl dark:text-black z-20 relative lg:text-5xl">m o r e a u</h2>
                     </div>
-                    <h3 class="font-body text-xl pt-2 lg:pt-8 dark:text-black z-20 relative lg:text-3xl">Développeur Web</h3>
+                    <h3 class="font-body text-xl pt-2 lg:pt-8 dark:text-black z-20 relative lg:text-3xl">Développeur Web
+                    </h3>
                 </div>
-                <div class="display flex flex-row justify-center items-center space-x-2 lg:space-x-4 pt-24">
-                    <IconPlus class="relative z-30" />
-                    <p class="text-base lg:text-xl dark:text-black z-20 relative">En savoir plus</p>
-                </div>
+                <RouterLink to="/fr/about">
+                    <div class="display flex flex-row justify-center items-center space-x-2 lg:space-x-4 pt-24">
+                        <IconPlus class="relative z-30" />
+                        <p class="text-base lg:text-xl dark:text-black z-20 relative">En savoir plus</p>
+                    </div>
+                </RouterLink>
                 <div class="lg:grid lg:justify-end lg:mr-20 lg:mt-16">
-                    <p class="text-xl hidden lg:flex lg:display lg:rotate-90 lg:items-center lg:justify-center dark:text-black">Scroll Down</p>
+                    <p
+                        class="text-xl hidden lg:flex lg:display lg:rotate-90 lg:items-center lg:justify-center dark:text-black">
+                        Scroll Down</p>
                     <div>
                         <IconScroll v-show="!isDark" class="display flex justify-center pt-24 lg:pt-16 relative z-30" />
-                        <IconScrollBlanc v-show="isDark" class="display flex justify-center pt-24 lg:pt-16 relative z-30" />
+                        <IconScrollBlanc v-show="isDark"
+                            class="display flex justify-center pt-24 lg:pt-16 relative z-30" />
                     </div>
                 </div>
             </div>
         </section>
         <section>
-            <div class="text-center border-b border-b-white dark:border-b-black mx-8 pb-2">
-                <p class="font-mono dark:text-black">PRINCIPAUX</p>
-                <h2 class="text-5xl font-sans dark:text-black">PROJETS</h2>
+            <div class="text-center mx-auto border-b w-[350px] border-b-white dark:border-b-black pb-2 mb-2">
+                <p class="font-mono dark:text-black lg:text-xl">PRINCIPAUX</p>
+                <h2 class="text-5xl font-sans dark:text-black lg:text-6xl">PROJETS</h2>
             </div>
             <section>
                 <CardProjets />
             </section>
         </section>
         <section>
-            <div class="text-center border-b border-b-white dark:border-b-black mx-8 pb-2">
-                <p class="font-mono dark:text-black">MES</p>
-                <h2 class="text-4xl font-sans dark:text-black">COMPÉTENCES</h2>
+            <div class="text-center mx-8 mt-8 pb-2">
+                <p class="font-mono dark:text-black lg:text-lg">MES</p>
+                <h2 class="text-4xl font-sans dark:text-black lg:text-5xl">COMPÉTENCES</h2>
             </div>
-            <div class="px-8 py-6 grid grid-cols-2 grid-rows-2 gap-4">
+            <div class="px-8 py-6 grid grid-cols-2 lg:grid-cols-3 grid-rows-2 gap-4 lg:gap-32 lg:mx-48">
                 <div class="col-span-1 row-span-2 bg-gray-100 p-4">
-                    <div class="flex justify-start">
-                        <h2 class="font-number dark:text-black">01</h2>
-                        <h2 class="font-number ml-2 dark:text-black">Dev</h2>
+                    <div class="flex justify-start items-center">
+                        <h2 class="font-number dark:text-black lg:text-2xl">01</h2>
+                        <h2 class="font-number ml-2 dark:text-black lg:text-2xl">Dev</h2>
                     </div>
                     <div class="grid grid-cols-2 gap-y-10 pt-4 mt-4">
                         <IconVue />
@@ -144,8 +150,8 @@
                 </div>
                 <div class="col-span-1 row-span-1 bg-gray-100 p-4">
                     <div class="flex justify-start">
-                        <h2 class="font-number dark:text-black">02</h2>
-                        <h2 class="font-number ml-2 dark:text-black">Design</h2>
+                        <h2 class="font-number dark:text-black lg:text-2xl">02</h2>
+                        <h2 class="font-number ml-2 dark:text-black lg:text-2xl">Design</h2>
                     </div>
                     <div class="grid grid-cols-2 gap-y-10 pt-4 mt-4">
                         <IconFigma />
@@ -155,8 +161,8 @@
                 </div>
                 <div class="col-span-1 row-span-1 bg-gray-100 p-4">
                     <div class="flex justify-start">
-                        <h2 class="font-number dark:text-black">03</h2>
-                        <h2 class="font-number ml-2 dark:text-black">Gestion</h2>
+                        <h2 class="font-number dark:text-black lg:text-2xl">03</h2>
+                        <h2 class="font-number ml-2 dark:text-black lg:text-2xl">Gestion</h2>
                     </div>
                     <div class="grid grid-cols-2 pt-4 mt-4">
                         <IconTrello />
