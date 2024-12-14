@@ -1,13 +1,9 @@
 <script setup lang="ts">
 import { ref, onMounted } from 'vue'
-import IconFleche from './icons/IconFleche.vue'
-import IconFLecheNoire from './icons/IconFLecheNoire.vue'
-import { useDark } from '@vueuse/core'
 import { pb } from '@/backend'
 import type { ProjetsResponse } from '@/pocketbase-types'
 import { RouterLink } from 'vue-router'
 
-const isDark = useDark()
 const projets = ref<ProjetsResponse[]>([])
 
 onMounted(async () => {

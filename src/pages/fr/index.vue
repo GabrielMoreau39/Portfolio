@@ -23,7 +23,8 @@
     import { useDark } from '@vueuse/core'
     import { ref, onMounted } from 'vue';
     import IconFLecheNoire from '@/components/icons/IconFLecheNoire.vue';
-    // import CardCarrousel from '@/components/CardCarrousel.vue';
+
+    //Dark/Light mode
 
     const isDark = useDark({
         selector: 'html',
@@ -31,6 +32,8 @@
         valueDark: 'dark',
         valueLight: 'light',
     })   
+
+    //Formulaire de contact
 
     const WEB3FORMS_ACCESS_KEY = "24847f4a-81d2-4b85-9167-fcb963166166";
 
@@ -59,22 +62,23 @@
         }
     }
 
+    //Carousel projets
+
     import { pb } from '@/backend';
     import type { ProjetsResponse } from '@/pocketbase-types';
-    import CardProjets from '@/components/CardProjets.vue';
+    import CarouselProjets from '@/components/CarouselProjets.vue';
     
-    const projets = ref<ProjetsResponse[]>([]);
-    
+    const listProjets = ref<ProjetsResponse[]>([]);
+
     onMounted(async () => {
         try {
-            const records = await pb.collection('projets').getFullList<ProjetsResponse>({
-                sort: '-created',
-            });
-            projets.value = records;
+            const records = await pb.collection('Projets').getFullList<ProjetsResponse>()
+            listProjets.value = records
+            console.log('Projets chargés:', records)
         } catch (error) {
-            console.error('Erreur lors de la récupération des projets :', error);
+            console.error('Erreur:', error)
         }
-    });
+    })
 </script>
 
 <template>
@@ -117,9 +121,7 @@
                 <p class="font-mono dark:text-black lg:text-xl">PRINCIPAUX</p>
                 <h2 class="text-5xl font-sans dark:text-black lg:text-6xl">PROJETS</h2>
             </div>
-            <section>
-                <CardProjets />
-            </section>
+            <CarouselProjets />
         </section>
         <section>
             <div class="text-center mx-8 mt-8 pb-2">
