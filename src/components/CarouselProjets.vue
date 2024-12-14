@@ -71,7 +71,7 @@ onUnmounted(() => {
 </script>
 
 <template>
-    <div class="mx-auto max-w-6xl px-4">
+    <div class="mx-auto max-w-6xl px-4 mt-4">
         <div v-if="isLoading" class="text-center py-8">
             Chargement...
         </div>
@@ -79,32 +79,42 @@ onUnmounted(() => {
         <div v-else-if="listProjets.length" class="relative">
             <div ref="containerRef" class="flex overflow-x-hidden snap-x snap-mandatory" @scroll="handleScroll">
                 <div v-for="projet in listProjets" :key="projet.id" class="w-full flex-none snap-center px-4">
-                    <div class="bg-white dark:bg-black rounded-lg shadow-md p-6 mx-auto max-w-2xl">
+                    <div class="bg-white dark:bg-black rounded-2xl shadow-md mx-auto max-w-2xl">
                         <img :src="pb.getFileUrl(projet, projet.image1)" :alt="projet.nom"
-                            class="w-full h-64 object-cover rounded-lg" />
-                        <h3 class="text-xl font-bold text-black dark:text-white mt-4">
-                            {{ projet.nom }}
-                        </h3>
-                        <p class="text-gray-600 dark:text-gray-300 mt-2">
-                            {{ projet.description }}
-                        </p>
-                        <RouterLink :to="`/fr/projet/${projet.id}`"
-                            class="text-black dark:text-white flex items-center space-x-2 mt-4">
-                            <span>Voir plus</span>
-                            <IconFleche v-if="!isDark" />
-                            <IconFLecheNoire v-else />
-                        </RouterLink>
+                            class="w-full h-64 object-cover rounded-t-2xl" />
+                        <div class="p-6">
+                            <h3 class="text-xl font-bold text-black dark:text-white">
+                                {{ projet.nom }}
+                            </h3>
+                            <div class="space-y-4">
+                                <p class="text-black dark:text-white mt-2">
+                                    {{ projet.description }}
+                                </p>
+                                <div class="display flex justify-between items-center">
+                                    <p class="text-gray-low dark:text-white border border-gray-low rounded-xl py-1 px-3">{{
+                                        projet.competence1 }}</p>
+                                    <p class="text-gray-low dark:text-white border border-gray-low rounded-xl py-1 px-3">{{
+                                        projet.competence2 }}</p>
+                                    <p class="text-gray-low dark:text-white border border-gray-low rounded-xl py-1 px-3">{{
+                                        projet.competence3 }}</p>
+                                </div>
+                                <RouterLink :to="`/fr/projet/${projet.id}`"
+                                    class="text-white dark:text-black flex items-center space-x-2 bg-black dark:bg-white rounded-2xl py-2 px-4 display justify-center mx-auto">
+                                    <span>Voir plus</span>
+                                </RouterLink>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
 
             <button @click="prevSlide"
                 class="absolute left-0 top-1/2 -translate-y-1/2 bg-black/50 text-white p-2 rounded-r">
-                ←
+                <
             </button>
             <button @click="nextSlide"
                 class="absolute right-0 top-1/2 -translate-y-1/2 bg-black/50 text-white p-2 rounded-l">
-                →
+                >
             </button>
 
             <div class="progress-container">
