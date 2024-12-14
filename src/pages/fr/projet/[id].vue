@@ -16,17 +16,9 @@
         valueLight: 'light',
     })   
 
-    const route = useRoute()
+    const route = useRoute("/fr/projet/[id]")
     const unProjet = ref<ProjetsResponse | null>(null)
     
-    onMounted(async () => {
-        try {
-            const id = route.params.id as string
-            unProjet.value = await pb.collection('Projets').getOne(id)
-        } catch (error) {
-            console.error('Erreur lors de la récupération du projet:', error)
-        }
-    })
 </script>
 
 <template>

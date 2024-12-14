@@ -7,7 +7,11 @@
 <template>
   <HeaderPage />
   <main>
-    <RouterView />
+    <RouterView v-slot="{ Component }">
+      <Suspense>
+        <component :is="Component" :key="$route.path" />
+      </Suspense>
+    </RouterView>
   </main>
   <FooterPage />
 </template>
