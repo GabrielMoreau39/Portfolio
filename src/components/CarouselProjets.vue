@@ -109,12 +109,14 @@ onUnmounted(() => {
             </div>
 
             <button @click="prevSlide"
-                class="absolute left-0 top-1/2 -translate-y-1/2 bg-black/50 text-white p-2 rounded-r">
-                <
+                class="absolute left-0 top-1/2 -translate-y-1/2 bg-black/50 dark:bg-white/50 text-white p-2 rounded-r">
+                <IconFleche v-show="!isDark" class="rotate-180"/>
+                <IconFLecheNoire v-show="isDark" class="rotate-180"/>
             </button>
             <button @click="nextSlide"
-                class="absolute right-0 top-1/2 -translate-y-1/2 bg-black/50 text-white p-2 rounded-l">
-                >
+                class="absolute right-0 top-1/2 -translate-y-1/2 bg-black/50 dark:bg-white/50 text-white p-2 rounded-l">
+                <IconFleche v-show="!isDark"/> 
+                <IconFLecheNoire v-show="isDark"/>  
             </button>
 
             <div class="progress-container">
