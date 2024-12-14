@@ -79,6 +79,16 @@
             console.error('Erreur:', error)
         }
     })
+
+    //Scroll du Bouton
+
+    const scrollToNextSection = () => {
+        const currentSection = document.querySelector('.element')?.closest('section')
+        const nextSection = currentSection?.nextElementSibling
+        if (nextSection) {
+            nextSection.scrollIntoView({ behavior: 'smooth' })
+        }
+    }
 </script>
 
 <template>
@@ -108,7 +118,7 @@
                     <p
                         class="text-xl hidden lg:flex lg:display lg:rotate-90 lg:items-center lg:justify-center dark:text-black">
                         Scroll Down</p>
-                    <div>
+                    <div @click="scrollToNextSection" class="cursor-pointer">
                         <IconScroll v-show="!isDark" class="display flex justify-center pt-24 lg:pt-16 relative z-30" />
                         <IconScrollBlanc v-show="isDark"
                             class="display flex justify-center pt-24 lg:pt-16 relative z-30" />
