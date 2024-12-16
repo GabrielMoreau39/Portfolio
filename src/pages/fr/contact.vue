@@ -72,74 +72,76 @@
 </script>
 
 <template>
-    <div class="px-7 py-10 bg-black dark:bg-white">
+    <div class="px-7 py-10 bg-black dark:bg-white lg:p-16">
         <section>
-            <h2 class="text-white dark:text-black">Où me trouver ?</h2>
-            <div class="space-y-10 my-10">
-                <div class="display flex flex-row items-center space-x-4">
+            <h2 class="text-white dark:text-black lg:text-3xl">Où me trouver ?</h2>
+            <div
+                class="space-y-10 my-10 lg:grid lg:grid-cols-2 lg:grid-rows-2 lg:items-center lg:justify-center lg:mx-auto">
+                <div class="display flex flex-row items-center space-x-4 ">
                     <div class="flex">
-                        <IconMailContact v-show="!isDark"/>
-                        <IconMailContactNoire v-show="isDark"/>
+                        <IconMailContact v-show="!isDark" />
+                        <IconMailContactNoire v-show="isDark" />
                     </div>
-                    <p class="text-white dark:text-black underline text-sm">
+                    <p class="text-white dark:text-black underline text-sm lg:text-xl">
                         gabrielmoreau@orange.fr
                     </p>
                 </div>
-                <div class="display flex flex-row items-center space-x-4">
+                <div class="display flex flex-row items-center space-x-4 ">
                     <div class="flex">
-                        <IconGithubContact v-show="!isDark"/>
-                        <IconGithubContactNoire v-show="isDark"/>
+                        <IconGithubContact v-show="!isDark" />
+                        <IconGithubContactNoire v-show="isDark" />
                     </div>
-                    <a href="https://github.com/GabrielMoreau39" class="text-white dark:text-black underline text-sm">
+                    <a href="https://github.com/GabrielMoreau39"
+                        class="text-white dark:text-black underline text-sm lg:text-xl">
                         GabrielMoreau39
                     </a>
                 </div>
-                <div class="display flex flex-row items-center space-x-4">
+                <div class="display flex flex-row items-center space-x-4 ">
                     <div class="flex">
-                        <IconLinkedInContact v-show="!isDark"/>
-                        <IconLinkedInContactNoire v-show="isDark"/>
+                        <IconLinkedInContact v-show="!isDark" />
+                        <IconLinkedInContactNoire v-show="isDark" />
                     </div>
                     <a href="https://www.linkedin.com/in/gabriel-moreau-71b29829b/"
-                        class="text-white dark:text-black underline text-sm">
+                        class="text-white dark:text-black underline text-sm lg:text-xl">
                         Gabriel Moreau
                     </a>
                 </div>
-                <div class="display flex flex-row items-center space-x-4">
+                <div class="display flex flex-row items-center space-x-4 ">
                     <div class="flex">
-                        <IconBehanceContact v-show="!isDark"/>
-                        <IconBehanceContactNoire v-show="isDark"/>
+                        <IconBehanceContact v-show="!isDark" />
+                        <IconBehanceContactNoire v-show="isDark" />
                     </div>
                     <a href="https://www.behance.net/gabrielmoreau2"
-                        class="text-white dark:text-black underline text-sm">
+                        class="text-white dark:text-black underline text-sm lg:text-xl">
                         Gabriel Moreau
                     </a>
                 </div>
             </div>
         </section>
         <section>
-            <h2>ou contactez moi directement</h2>
-            <form @submit.prevent="submitForm" class="space-y-6 py-6">
-                <div>
-                    <label for="name" class="block text-sm font-medium text-white dark:text-black">Nom</label>
+            <h2 class="text-2xl">ou contactez moi directement</h2>
+            <form @submit.prevent="submitForm" class="space-y-6 lg:space-y-0 py-6 lg:grid lg:grid-cols-2 lg:gap-6">
+                <div class="lg:col-start-1">
+                    <label for="name" class="block text-sm font-medium text-white dark:text-black lg:text-xl">Nom</label>
                     <input type="text" id="name" name="name" v-model="name" placeholder="Moreau"
-                        class="mt-1 w-full h-12 pl-2 bg-black dark:bg-white text-white dark:text-black border border-[#E7E7E7] shadow-sm" />
+                        class="mt-1 w-full h-12 lg:h-16 pl-2 bg-black dark:bg-white text-white dark:text-black border border-[#E7E7E7] shadow-sm" />
                 </div>
-                <div>
-                    <label for="email" class="block text-sm font-medium text-white dark:text-black">Email</label>
-                    <input type="email" id="email" name="email" v-model="email" placeholder="Gabriel"
-                        class="mt-1 w-full h-12 pl-2 bg-black dark:bg-white text-white dark:text-black border border-[#E7E7E7] shadow-sm" />
-                </div>
-                <div>
-                    <label for="message" class="block text-sm font-medium text-white dark:text-black">Message</label>
+                <div class="lg:col-start-2 lg:row-span-2">
+                    <label for="message" class="block text-sm font-medium text-white dark:text-black lg:text-xl">Message</label>
                     <textarea id="message" name="message" v-model="message" rows="5"
                         placeholder="Tappez votre message ici"
-                        class="mt-1 w-full pt-2 pl-2 bg-black dark:bg-white text-white dark:text-black border border-[#E7E7E7] shadow-sm"></textarea>
+                        class="mt-1 w-full h-[calc(100%-2rem)] pt-2 pl-2 bg-black dark:bg-white text-white dark:text-black border border-[#E7E7E7] shadow-sm"></textarea>
                 </div>
-                <div class="flex justify-end items-center">
+                <div class="lg:col-start-1">
+                    <label for="email" class="block text-sm font-medium text-white dark:text-black lg:text-xl">Email</label>
+                    <input type="email" id="email" name="email" v-model="email" placeholder="Gabriel"
+                        class="mt-1 w-full h-12 lg:h-16 pl-2 bg-black dark:bg-white text-white dark:text-black border border-[#E7E7E7] shadow-sm" />
+                </div>
+                <div class="lg:col-start-2 flex justify-end items-center">
                     <button type="submit"
                         class="text-white dark:text-black text-lg font-bold flex justify-end items-center">Envoyer
-                        <IconFleche v-show="!isDark"/>
-                        <IconFLecheNoire v-show="isDark"/>
+                        <IconFleche v-show="!isDark" />
+                        <IconFLecheNoire v-show="isDark" />
                     </button>
                 </div>
             </form>
