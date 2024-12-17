@@ -30,7 +30,6 @@ const fetchProjets = async () => {
 const updateScrollProgress = () => {
   if (!containerRef.value) return
   const { scrollLeft, scrollWidth, clientWidth } = containerRef.value
-  // Invert the calculation by subtracting from 100
   scrollProgress.value = 100 - ((scrollLeft / (scrollWidth - clientWidth)) * 100)
   console.log('Scroll Progress:', scrollProgress.value)
 }

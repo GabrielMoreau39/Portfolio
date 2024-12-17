@@ -1,24 +1,18 @@
 <script setup lang="ts">
 import { pb } from '@/backend'
 import type { ProjetsResponse } from '@/pocketbase-types'
-import { ref, onMounted } from 'vue'
+import { ref } from 'vue'
 import { RouterLink } from 'vue-router'
 
 const listProjets = ref<ProjetsResponse[]>([])
 const error = ref<string | null>(null)
 
-onMounted(async () => {
-    try {
-        const records = await pb.collection('Projets').getFullList<ProjetsResponse>({
-            requestKey: 'projets-carousel',
-            timeout: 10000
-        })
-        listProjets.value = records
-    } catch (err: any) {
-        error.value = err.message
-        console.error('Error loading projects:', err)
-    }
-})
+const props = defineProps<{
+    page_id?: string
+}>()
+
+const records = await pb.collection('Projets').getFullList<ProjetsResponse>()
+listProjets.value = records
 </script>
 
 <template>
