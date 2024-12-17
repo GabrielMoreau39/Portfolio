@@ -51,7 +51,10 @@ const isDark = useDark({
           </div>
 
           <!-- Timeline Image -->
-          <img src="/public/img/frise.svg" alt="frise" class="hidden lg:block lg:h-[718px]">
+          <div>
+            <img src="/public/img/frise.svg" alt="frise" class="hidden lg:block lg:h-[718px]" v-show="!isDark">
+            <img src="/public/img/frise_noire.svg" alt="frise" class="hidden lg:block lg:h-[718px]" v-show="isDark">
+          </div>
 
           <!-- Second Card -->
           <div class="bg-[#EDEDED] dark:bg-gray m-3 lg:mt-96 p-4 rounded-lg space-y-4 lg:w-[400px]">
