@@ -23,6 +23,12 @@
     import { useDark } from '@vueuse/core'
     import { ref, onMounted } from 'vue';
     import IconFLecheNoire from '@/components/icons/IconFLecheNoire.vue';
+    import IconBehance from '@/components/icons/IconBehance.vue';
+    import IconBehanceNoir from '@/components/icons/IconBehanceNoir.vue';
+    import IconInstagram from '@/components/icons/IconInstagram.vue';
+    import IconInstagramNoir from '@/components/icons/IconInstagramNoir.vue';
+    import IconLikedInNoir from '@/components/icons/IconLikedInNoir.vue';
+    import IconLinkedIn from '@/components/icons/IconLinkedIn.vue';
 
     //Dark/Light mode
 
@@ -184,14 +190,51 @@
             </div>
         </section>
         <section class="bg-white dark:bg-black py-7">
-            <div class="px-5 space-y-2">
-                <h2 class="text-black dark:text-white font-sans font-bold ">Contactez-moi</h2>
-                <div>
-                    <p class="text-black dark:text-white w-1/2%">Si vous avez besoin de me poser des</p>
-                    <p class="text-black dark:text-white w-1/2%">questions ou avoir plus d'informations,</p>
-                    <p class="text-black dark:text-white w-1/2%">remplissez ce formulaire.</p>
+            <div class="px-5 lg:px-32 lg:pt-2 space-y-2 lg:grid lg:grid-cols-2">
+                <div class="space-y-2">
+                    <h2 class="text-black dark:text-white font-sans font-bold lg:text-2xl lg:pt-6">Contactez-moi</h2>
+                    <div>
+                        <p class="text-black dark:text-white w-1/2% lg:text-lg">Si vous avez besoin de me poser des</p>
+                        <p class="text-black dark:text-white w-1/2% lg:text-lg">questions ou avoir plus d'informations,
+                        </p>
+                        <p class="text-black dark:text-white w-1/2% lg:text-lg">remplissez ce formulaire.</p>
+                    </div>
+                    <div class="lg:display lg:flex lg:justify-start lg:items-center lg:space-x-8 hidden lg:pt-4">
+                        <div>
+                            <a href="https://www.linkedin.com">
+                                <IconLinkedIn v-show="isDark" />
+                            </a>
+                            <a href="https://www.linkedin.com">
+                                <IconLikedInNoir v-show="!isDark" />
+                            </a>
+                        </div>
+                        <div>
+                            <a href="https://www.behance.net">
+                                <IconBehance v-show="isDark" />
+                            </a>
+                            <a href="https://www.behance.net">
+                                <IconBehanceNoir v-show="!isDark" />
+                            </a>
+                        </div>
+                        <div>
+                            <a href="https://www.instagram.com">
+                                <IconInstagram v-show="isDark" />
+                            </a>
+                            <a href="https://www.instagram.com">
+                                <IconInstagramNoir v-show="!isDark" />
+                            </a>
+                        </div>
+                        <div>
+                            <a href="https://github.com">
+                                <IconGitHub v-show="isDark" />
+                            </a>
+                            <a href="https://github.com">
+                                <IconGithubNoir v-show="!isDark" />
+                            </a>
+                        </div>
+                    </div>
                 </div>
-                <form @submit.prevent="submitForm" class="grid grid-cols-2 gap-6 py-6 ">
+                <form @submit.prevent="submitForm" class="grid grid-cols-2 gap-6 py-6 lg:pb-0">
                     <div class="space-y-6">
                         <div>
                             <label for="name" class="block text-sm font-medium text-black dark:text-white"></label>
