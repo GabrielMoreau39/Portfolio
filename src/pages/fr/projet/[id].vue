@@ -1,7 +1,7 @@
 <!-- eslint-disable vue/multi-word-component-names -->
 <script setup lang="ts">
     import { useRoute } from 'vue-router'
-    import { ref, onMounted } from 'vue'
+    import { ref } from 'vue'
     import { pb } from '@/backend'
     import type { ProjetsResponse } from '@/pocketbase-types'
     import { useDark } from '@vueuse/core'
@@ -20,11 +20,8 @@
     const route = useRoute("/fr/projet/[id]")
     const unProjet = ref<ProjetsResponse | null>(null)
 
-    onMounted(async () => {
-        const id = route.params.id
+    const id = route.params.id
         unProjet.value = await pb.collection('projets').getOne(id)
-    })
-    
 </script>
 
 <template>
