@@ -1,12 +1,6 @@
 <!-- eslint-disable vue/multi-word-component-names -->
 <script setup lang="ts">
     import CardProjetsNoire from '@/components/CardProjetsNoire.vue'
-    import { useRoute } from 'vue-router/auto'
-    import type { ProjetsResponse } from '@/pocketbase-types'; 
-    import { ref } from 'vue';
-
-    const route = useRoute("/fr/projet/")
-    const unProjet = ref<ProjetsResponse | null>(null)
 </script>
 <template>
     <div>
