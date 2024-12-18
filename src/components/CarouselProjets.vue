@@ -5,6 +5,10 @@ import type { ProjetsResponse } from '@/pocketbase-types'
 import { useDark } from '@vueuse/core'
 import IconFleche from './icons/IconFleche.vue'
 import IconFLecheNoire from './icons/IconFLecheNoire.vue'
+import IconFigma from './icons/IconFigma.vue'
+import IconVsCode from './icons/IconVsCode.vue'
+import IconGitHub from './icons/IconGitHub.vue'
+import IconGithubNoir from './icons/IconGithubNoir.vue'
 
 const isDark = useDark()
 const listProjets = ref<ProjetsResponse[]>([])
@@ -71,37 +75,59 @@ onUnmounted(() => {
 
 <template>
     <div class="mx-auto max-w-6xl px-4 mt-4">
-        <div v-if="isLoading" class="text-center py-8">
-            Chargement...
-        </div>
-
-        <div v-else-if="listProjets.length" class="relative">
+        <div if="listProjets.length" class="relative">
             <div ref="containerRef" class="flex overflow-x-hidden snap-x snap-mandatory" @scroll="handleScroll">
                 <div v-for="projet in listProjets" :key="projet.id" class="w-full flex-none snap-center px-4">
-                    <div class="bg-white dark:bg-black rounded-2xl shadow-md mx-auto max-w-2xl">
-                        <img :src="pb.getFileUrl(projet, projet.image1)" :alt="projet.nom"
-                            class="w-full h-64 object-cover rounded-t-2xl" />
-                        <div class="p-6">
-                            <h3 class="text-xl font-bold text-black dark:text-white">
-                                {{ projet.nom }}
-                            </h3>
-                            <div class="space-y-4">
-                                <p class="text-black dark:text-white mt-2">
-                                    {{ projet.description }}
-                                </p>
-                                <div class="display flex justify-between items-center">
-                                    <p class="text-gray-low dark:text-white border border-gray-low rounded-xl py-1 px-3">{{
-                                        projet.competence1 }}</p>
-                                    <p class="text-gray-low dark:text-white border border-gray-low rounded-xl py-1 px-3">{{
-                                        projet.competence2 }}</p>
-                                    <p class="text-gray-low dark:text-white border border-gray-low rounded-xl py-1 px-3">{{
-                                        projet.competence3 }}</p>
+                    <div class="bg-white dark:bg-black rounded-2xl shadow-md mx-auto max-w-4xl  lg:grid lg:grid-cols-2">
+                        <div>
+                            <img :src="pb.getFileUrl(projet, projet.image1)" :alt="projet.nom"
+                                class="w-full h-64 object-cover rounded-t-2xl lg:hidden" />
+                            <div class="p-6">
+                                <h3 class="text-xl font-bold text-black dark:text-white lg:text-2xl lg:rounded-2xl">
+                                    {{ projet.nom }}
+                                </h3>
+                                <div class="space-y-8">
+                                    <p class="text-black dark:text-white mt-2 lg:text-lg">
+                                        {{ projet.description }}
+                                    </p>
+                                    <div class="display flex justify-between items-center">
+                                        <p
+                                            class="text-gray-low dark:text-white border border-gray-low rounded-xl py-1 px-3 lg:text-base lg:rounded-2xl">
+                                            {{
+                                            projet.competence1 }}</p>
+                                        <p
+                                            class="text-gray-low dark:text-white border border-gray-low rounded-xl py-1 px-3 lg:text-base lg:rounded-2xl">
+                                            {{
+                                            projet.competence2 }}</p>
+                                        <p
+                                            class="text-gray-low dark:text-white border border-gray-low rounded-xl py-1 px-3 lg:text-base lg:rounded-2xl">
+                                            {{
+                                            projet.competence3 }}</p>
+                                    </div>
+                                    <div class="hidden lg:grid lg:space-y-2">
+                                        <p class="lg:text-lg dark:lg:text-white lg:text-black">Applications utilisées
+                                        </p>
+                                        <div class="lg:flex lg:items-center lg:space-x-6">
+                                            <IconFigma />
+                                            <IconVsCode />
+                                            <IconGitHub v-show="isDark" />
+                                            <IconGithubNoir v-show="!isDark" />
+                                        </div>
+                                    </div>
+                                    <RouterLink :to="`/fr/projet/${projet.id}`"
+                                        class="text-white dark:text-black flex items-center space-x-2 bg-black dark:bg-white rounded-2xl py-2 px-4 display justify-center mx-auto">
+                                        <span>Voir plus</span>
+                                    </RouterLink>
                                 </div>
-                                <RouterLink :to="`/fr/projet/${projet.id}`"
-                                    class="text-white dark:text-black flex items-center space-x-2 bg-black dark:bg-white rounded-2xl py-2 px-4 display justify-center mx-auto">
-                                    <span>Voir plus</span>
-                                </RouterLink>
                             </div>
+                        </div>
+                        <div class="hidden lg:grid lg:grid-cols-2 gap-4 p-8">
+                            <img :src="pb.getFileUrl(projet, projet.image1)" :alt="projet.nom"
+                                class="w-full h-64 object-cover rounded-2xl lg:col-span-2" />
+                            <img :src="pb.getFileUrl(projet, projet.image2)" :alt="projet.nom"
+                                class="w-full h-auto object-cover rounded-2xl lg:col-start-1" />
+                            <img :src="pb.getFileUrl(projet, projet.image3)" :alt="projet.nom"
+                                class="w-full h-auto object-cover rounded-2xl lg:col-start-2" />
                         </div>
                     </div>
                 </div>
@@ -109,13 +135,13 @@ onUnmounted(() => {
 
             <button @click="prevSlide"
                 class="absolute left-0 top-1/2 -translate-y-1/2 bg-black/50 dark:bg-white/50 text-white p-2 rounded-r">
-                <IconFleche v-show="!isDark" class="rotate-180"/>
-                <IconFLecheNoire v-show="isDark" class="rotate-180"/>
+                <IconFleche v-show="!isDark" class="rotate-180" />
+                <IconFLecheNoire v-show="isDark" class="rotate-180" />
             </button>
             <button @click="nextSlide"
                 class="absolute right-0 top-1/2 -translate-y-1/2 bg-black/50 dark:bg-white/50 text-white p-2 rounded-l">
-                <IconFleche v-show="!isDark"/> 
-                <IconFLecheNoire v-show="isDark"/>  
+                <IconFleche v-show="!isDark" />
+                <IconFLecheNoire v-show="isDark" />
             </button>
 
             <div class="progress-container">

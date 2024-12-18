@@ -1,7 +1,8 @@
 <template>
     <div>
         <svg width="23" height="34" viewBox="0 0 23 34" fill="none" xmlns="http://www.w3.org/2000/svg"
-            class="flex-grow-0 flex-shrink-0 w-[22.28px] h-[33.4px] relative" preserveAspectRatio="xMidYMid meet">
+            class="flex-grow-0 flex-shrink-0 w-[22.28px] h-[33.4px] lg:w-[31px] lg:h-auto relative"
+            preserveAspectRatio="xMidYMid meet">
             <g clip-path="url(#clip0_793_5216)">
                 <path
                     d="M5.58325 33.5306C8.6564 33.5306 11.1505 31.0364 11.1505 27.9633V22.396H5.58325C2.5101 22.396 0.0159454 24.8901 0.0159454 27.9633C0.0159454 31.0364 2.5101 33.5306 5.58325 33.5306Z"

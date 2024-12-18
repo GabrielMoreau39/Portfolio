@@ -5,11 +5,6 @@ import { ref } from 'vue'
 import { RouterLink } from 'vue-router'
 
 const listProjets = ref<ProjetsResponse[]>([])
-const error = ref<string | null>(null)
-
-const props = defineProps<{
-    page_id?: string
-}>()
 
 const records = await pb.collection('Projets').getFullList<ProjetsResponse>()
 listProjets.value = records

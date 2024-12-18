@@ -1,7 +1,7 @@
 <template>
     <div>
         <svg width="35" height="35" viewBox="0 0 35 35" fill="none" xmlns="http://www.w3.org/2000/svg"
-            class="w-[33.68px] h-[33.4px] relative" preserveAspectRatio="xMidYMid meet">
+            class="w-[33.68px] h-[33.4px] lg:w-[46px] lg:h-auto relative" preserveAspectRatio="xMidYMid meet">
             <g clip-path="url(#clip0_793_5241)">
                 <mask id="mask0_793_5241" style="mask-type:luminance" maskUnits="userSpaceOnUse" x="0" y="0" width="35"
                     height="35">
