@@ -118,7 +118,7 @@
                         <p class="text-base lg:text-xl dark:text-black z-20 relative">En savoir plus</p>
                     </div>
                 </RouterLink>
-                <div class="lg:grid lg:justify-end lg:mr-20 lg:mt-16">
+                <div class="lg:grid lg:justify-end lg:mr-20 lg:mt-8">
                     <p
                         class="text-xl hidden lg:flex lg:display lg:rotate-90 lg:items-center lg:justify-center dark:text-black">
                         Scroll Down</p>
