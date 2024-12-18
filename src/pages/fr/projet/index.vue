@@ -2,8 +2,7 @@
 <script setup lang="ts">
     import CardProjetsNoire from '@/components/CardProjetsNoire.vue'
     import { useRoute } from 'vue-router/auto'
-    import type { ProjetsResponse } from '@/pocketbase-types';
-    import { pb } from '@/backend';
+    import type { ProjetsResponse } from '@/pocketbase-types'; 
     import { ref } from 'vue';
 
     const route = useRoute("/fr/projet/")

@@ -21,7 +21,7 @@
     import IconWordpress from '@/components/icons/IconWordpress.vue';
     import IconFleche from '@/components/icons/IconFleche.vue';
     import { useDark } from '@vueuse/core'
-    import { ref, onMounted } from 'vue';
+    import { ref } from 'vue';
     import IconFLecheNoire from '@/components/icons/IconFLecheNoire.vue';
     import IconBehance from '@/components/icons/IconBehance.vue';
     import IconBehanceNoir from '@/components/icons/IconBehanceNoir.vue';
@@ -76,15 +76,13 @@
     
     const listProjets = ref<ProjetsResponse[]>([]);
 
-    onMounted(async () => {
-        try {
+    try {
             const records = await pb.collection('Projets').getFullList<ProjetsResponse>()
             listProjets.value = records
             console.log('Projets chargés:', records)
         } catch (error) {
             console.error('Erreur:', error)
-        }
-    })
+        }    
 
     //Scroll du Bouton
 
