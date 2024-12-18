@@ -123,11 +123,11 @@ onUnmounted(() => {
                         </div>
                         <div class="hidden lg:grid lg:grid-cols-2 gap-4 p-8">
                             <img :src="pb.getFileUrl(projet, projet.image1)" :alt="projet.nom"
-                                class="w-full h-64 object-cover rounded-2xl lg:col-span-2" />
+                                class="w-full h-64 object-cover rounded-2xl lg:col-span-2 border border-black" />
                             <img :src="pb.getFileUrl(projet, projet.image2)" :alt="projet.nom"
-                                class="w-full h-auto object-cover rounded-2xl lg:col-start-1" />
+                                class="w-full h-[134px] object-cover rounded-2xl lg:col-start-1 border border-black" />
                             <img :src="pb.getFileUrl(projet, projet.image3)" :alt="projet.nom"
-                                class="w-full h-auto object-cover rounded-2xl lg:col-start-2" />
+                                class="w-full h-[134px] object-cover rounded-2xl lg:col-start-2 border border-black" />
                         </div>
                     </div>
                 </div>
