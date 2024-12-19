@@ -35,28 +35,28 @@
                 CV</a>
         </div>
         <div class="display flex justify-center items-center space-x-4">
-            <a href="https://www.linkedin.com">
+            <a href="https://www.linkedin.com/in/gabriel-moreau-71b29829b/">
                 <IconLinkedIn v-show="!isDark" />
             </a>
-            <a href="https://www.linkedin.com">
+            <a href="https://www.linkedin.com/in/gabriel-moreau-71b29829b/">
                 <IconLikedInNoir v-show="isDark" />
             </a>
-            <a href="https://www.behance.net">
+            <a href="https://www.behance.net/gabrielmoreau2">
                 <IconBehance v-show="!isDark" />
             </a>
-            <a href="https://www.behance.net">
+            <a href="https://www.behance.net/gabrielmoreau2">
                 <IconBehanceNoir v-show="isDark" />
             </a>
-            <a href="https://www.instagram.com">
+            <a href="https://www.instagram.com/gbriel_mr/">
                 <IconInstagram v-show="!isDark" />
             </a>
-            <a href="https://www.instagram.com">
+            <a href="https://www.instagram.com/gbriel_mr/">
                 <IconInstagramNoir v-show="isDark" />
             </a>
-            <a href="https://github.com">
+            <a href="https://github.com/GabrielMoreau39">
                 <IconGitHub v-show="!isDark" />
             </a>
-            <a href="https://github.com">
+            <a href="https://github.com/GabrielMoreau39">
                 <IconGithubNoir v-show="isDark" />
             </a>
         </div>
